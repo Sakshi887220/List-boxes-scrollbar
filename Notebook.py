@@ -3,30 +3,24 @@ from tkinter import *
 root = Tk()
 # Create frame and scrollbar
 my_frame = Frame(root)
-my_scrollbar = Scrollbar(my_frame, orient=VERTICAL)
+
 
 # Listbox!
 # SINGLE, BROWSE, MULTIPLE, EXTENDED
-my_listbox = Listbox(my_frame, width=50, yscrollcommand=my_scrollbar.set, selectmode=MULTIPLE)
+
 
 #configure scrollbar
-my_scrollbar.config(command=my_listbox.yview)
-my_scrollbar.pack(side=RIGHT, fill=Y)
+
 my_frame.pack()
-my_listbox.pack(pady=15)
+
 #Add item to listbox
-my_listbox.insert(END, "This is an item")
-my_listbox.insert(END, "Second Item!")
+
 
 # Add list of items
-my_list = ["One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", "One", "Two", "Three", ]
 
-for item in my_list:
-	my_listbox.insert(END, item)
 
-def delete():
-	my_listbox.delete(ANCHOR)
-	my_label.config(text='')
+
+
 
 def select():
 	my_label.config(text=my_listbox.get(ANCHOR))
